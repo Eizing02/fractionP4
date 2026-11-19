@@ -1,0 +1,8 @@
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/questions/
+.impeccable/config.local.json
+.agent/
+.agents/
+.DS_Store
+Thumbs.db

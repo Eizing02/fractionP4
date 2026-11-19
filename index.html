@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ครัววุ้นเศษส่วน ป.4 — บวกและลบเศษส่วนแบบเห็นภาพ</title>
+  <meta name="description" content="สื่อการเรียนรู้ออนไลน์คณิตศาสตร์ ป.4 เรื่องการบวกและการลบเศษส่วนที่ตัวส่วนตัวหนึ่งเป็นพหุคูณของอีกตัวหนึ่ง เข้าใจง่าย เล่นได้ทันที">
+  <meta name="theme-color" content="#F4F8F6">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23FFFFFF' stroke='%2312231E' stroke-width='4'/%3E%3Cpath d='M32 4 A28 28 0 0 1 60 32 L32 32 Z' fill='%230D7A50'/%3E%3Cpath d='M32 4 A28 28 0 0 0 4 32 A28 28 0 0 0 32 60 L32 32 Z' fill='%233E46AD'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img class="brand-mark" src="./assets/images/jelly-sticker.jpg" alt="" width="38" height="38">
+        <h1 class="brand-title">ครัววุ้นเศษส่วน ป.4</h1>
+      </div>
+
+      <button type="button" class="icon-only-btn sound-btn" id="soundToggleBtn" aria-pressed="true" aria-label="ปิดเสียงเอฟเฟกต์"></button>
+
+      <div class="header-switches">
+        <nav class="mode-tabs" role="tablist" aria-label="เลือกโหมด">
+          <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" data-mode="learn">
+            <span class="ico-slot" data-icon="guided"></span>
+            <span>เรียน</span>
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" data-mode="game">
+            <span class="ico-slot" data-icon="game"></span>
+            <span>เล่นเกม</span>
+          </button>
+        </nav>
+
+        <div class="seg-group" role="group" aria-label="เลือกบวกหรือลบ">
+          <button type="button" class="seg-btn seg-add is-active" data-op="+" aria-pressed="true">
+            <span class="ico-slot" data-icon="plus"></span>
+            <span>บวก</span>
+          </button>
+          <button type="button" class="seg-btn seg-sub" data-op="-" aria-pressed="false">
+            <span class="ico-slot" data-icon="minus"></span>
+            <span>ลบ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-shell" id="appStage" aria-live="polite"></main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T21:10:00+07:00",
+  "title": "Design System: ครัววุ้นเศษส่วน ป.4",
+  "extensions": {
+    "colorMeta": {
+      "butterfly-pea": {
+        "role": "primary",
+        "displayName": "Butterfly-Pea Indigo",
+        "canonical": "#3E46AD",
+        "tonalRamp": ["#161A4A", "#252B75", "#3E46AD", "#5C64C9", "#838AD9", "#ADB2EA", "#D2D5F5", "#E8EAFD"]
+      },
+      "pandan-leaf": {
+        "role": "secondary",
+        "displayName": "Pandan Leaf Emerald",
+        "canonical": "#0D7A50",
+        "tonalRamp": ["#053623", "#085436", "#0D7A50", "#179C68", "#42B888", "#7AD1AE", "#B3E5D0", "#DEF4EA"]
+      },
+      "hibiscus-coral": {
+        "role": "secondary",
+        "displayName": "Hibiscus Coral",
+        "canonical": "#C4362F",
+        "tonalRamp": ["#591411", "#8E231D", "#C4362F", "#DC5B54", "#EB837D", "#F4ACA8", "#F9CFCB", "#FCE6E4"]
+      },
+      "turmeric-knife": {
+        "role": "tertiary",
+        "displayName": "Turmeric Knife Gold",
+        "canonical": "#995B00",
+        "tonalRamp": ["#422600", "#6B3E00", "#995B00", "#C97A00", "#E59D26", "#F2BE5C", "#FAD997", "#FFF1D0"]
+      },
+      "porcelain-ground": {
+        "role": "neutral",
+        "displayName": "Porcelain Ground",
+        "canonical": "#F4F8F6",
+        "tonalRamp": ["#12231E", "#263D36", "#3A534B", "#637F76", "#9CB9AC", "#CBE0D6", "#EAF2EE", "#F4F8F6"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "App title in top bar." },
+      "headline": { "displayName": "Headline", "purpose": "Workbench section headings." },
+      "body": { "displayName": "Body", "purpose": "Short Thai cue prompts and feedback." },
+      "label": { "displayName": "Label", "purpose": "Controls, tabs, and fraction badges." }
+    },
+    "shadows": [
+      { "name": "workbench-ambient", "value": "0 2px 8px rgba(18, 35, 30, 0.06)", "purpose": "Subtle elevation on top-level panels and primary CTAs." },
+      { "name": "panel-lifted", "value": "0 8px 24px rgba(18, 35, 30, 0.08)", "purpose": "Elevated floating feedback when needed." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Snappy, friendly exponential ease-out for slicing and merging." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "680px" },
+      { "name": "desktop", "value": "1000px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Combine Primary Button",
+      "kind": "button",
+      "refersTo": "button-add",
+      "description": "Primary CTA for merging slices in addition mode.",
+      "html": "<button class=\"ds-cta-add\" type=\"button\">รวมชิ้นวุ้นเลย</button>",
+      "css": ".ds-cta-add { background: var(--add, #0D7A50); color: #FFFFFF; border: none; border-radius: 999px; padding: 12px 22px; min-height: 52px; font-family: Kanit, sans-serif; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: transform 140ms cubic-bezier(0.22, 1, 0.36, 1), filter 160ms ease; } .ds-cta-add:hover { filter: brightness(0.95); transform: translateY(-1px); } .ds-cta-add:focus-visible { outline: 3px solid #3E46AD; outline-offset: 2px; }"
+    },
+    {
+      "name": "Scoop Subtraction Button",
+      "kind": "button",
+      "refersTo": "button-sub",
+      "description": "Primary CTA for scooping slices in subtraction mode.",
+      "html": "<button class=\"ds-cta-sub\" type=\"button\">ตักวุ้นออกเลย</button>",
+      "css": ".ds-cta-sub { background: var(--sub, #C4362F); color: #FFFFFF; border: none; border-radius: 999px; padding: 12px 22px; min-height: 52px; font-family: Kanit, sans-serif; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: transform 140ms cubic-bezier(0.22, 1, 0.36, 1), filter 160ms ease; } .ds-cta-sub:hover { filter: brightness(0.95); transform: translateY(-1px); } .ds-cta-sub:focus-visible { outline: 3px solid #3E46AD; outline-offset: 2px; }"
+    },
+    {
+      "name": "Knife Multiplier Button",
+      "kind": "button",
+      "refersTo": "button-knife",
+      "description": "Tactile turmeric multiplier control for live tray slicing.",
+      "html": "<button class=\"ds-knife\" type=\"button\">&times;4</button>",
+      "css": ".ds-knife { background: var(--knife-soft, #FFF1D0); color: var(--knife-ink, #6B3E00); border: 2px solid #E5C170; border-radius: 10px; min-width: 64px; min-height: 48px; padding: 8px 14px; font-family: Kanit, sans-serif; font-size: 1.08rem; font-weight: 700; font-variant-numeric: tabular-nums; cursor: pointer; transition: transform 140ms ease, border-color 160ms ease; } .ds-knife:hover { transform: translateY(-2px); border-color: #995B00; } .ds-knife:focus-visible { outline: 3px solid #3E46AD; outline-offset: 2px; }"
+    },
+    {
+      "name": "Mode Segmented Navigation",
+      "kind": "nav",
+      "description": "3-mode pill switcher for Guided, Sandbox, and Game modes.",
+      "html": "<nav class=\"ds-tabs\"><button class=\"ds-tab is-active\">ฝึกทีละขั้น</button><button class=\"ds-tab\">ทดลองเอง</button><button class=\"ds-tab\">เกมร้านวุ้น</button></nav>",
+      "css": ".ds-tabs { display: inline-flex; gap: 6px; padding: 4px; background: #EAF2EE; border: 1px solid #CBE0D6; border-radius: 999px; } .ds-tab { min-height: 44px; padding: 8px 16px; border: none; border-radius: 999px; background: transparent; color: #3A534B; font-family: Kanit, sans-serif; font-weight: 600; cursor: pointer; } .ds-tab.is-active { background: #FFFFFF; color: #12231E; box-shadow: 0 2px 8px rgba(18, 35, 30, 0.06); } .ds-tab:focus-visible { outline: 3px solid #3E46AD; outline-offset: 2px; }"
+    },
+    {
+      "name": "Stacked Fraction Badge",
+      "kind": "custom",
+      "description": "Color-coded textbook stacked fraction synced with visual trays.",
+      "html": "<span class=\"ds-frac\"><span class=\"ds-n\">4</span><span class=\"ds-bar\"></span><span class=\"ds-d\">8</span></span>",
+      "css": ".ds-frac { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.12; font-family: Kanit, sans-serif; font-weight: 700; font-size: 1.2rem; font-variant-numeric: tabular-nums; color: #252B75; padding: 2px 6px; } .ds-bar { width: 100%; min-width: 1.35em; height: 2.2px; background: currentColor; margin: 2px 0; border-radius: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sunlit Thai Jelly Kitchen Workbench",
+    "overview": "A bright, tactile classroom workbench built for 9–10 year old Grade 4 learners under daylight and projector lighting. Every color, divider, and shape performs a direct mathematical job so students understand fraction equivalence, addition, and subtraction by looking and tapping rather than reading paragraphs.",
+    "keyCharacteristics": [
+      "Color-coded mathematical lockstep between SVG fraction trays and stacked numerals.",
+      "Flat, open workbench surfaces separated by clean hairlines rather than nested boxes.",
+      "Touch-first 44px+ controls with gentle, non-punitive visual feedback.",
+      "Cohesive hand-painted gouache Thai storybook characters blended seamlessly onto light porcelain surfaces."
+    ],
+    "rules": [
+      { "name": "The Mathematical Color Rule", "body": "Never use Butterfly-Pea, Pandan, Hibiscus, or Turmeric as arbitrary decoration; each hue maps strictly to starting fraction, addition, subtraction, and slicing respectively.", "section": "colors" },
+      { "name": "The Tabular Numerals Rule", "body": "Every stacked fraction, knife multiplier, and readout uses font-variant-numeric: tabular-nums so live updates never shift layout horizontally.", "section": "typography" },
+      { "name": "The No-Nested-Cards Rule", "body": "Inner sections inside a workbench panel never receive secondary bordered card shells; they use open whitespace and hairline dividers.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep all interactive buttons at least 44x44px (46px-52px on pointer: coarse).",
+      "Do pair subtraction cutouts with diagonal hatching so colorblind learners distinguish removed slices without relying on color alone.",
+      "Do keep instructional copy concise (2-5 Thai words) and let real-time SVG changes demonstrate every rule.",
+      "Do blend gouache character illustrations with mix-blend-mode: multiply on white/tinted light surfaces without artificial circular crop masks."
+    ],
+    "donts": [
+      "Don't substitute Unicode emojis for UI icons; use the uniform 2px-stroke SVG icon set.",
+      "Don't nest bordered cards inside workbench panels or add decorative one-sided left border strips.",
+      "Don't introduce countdown timers, harsh error buzzers, or negative subtraction problems in Grade 4 modes."
+    ]
+  }
+}
