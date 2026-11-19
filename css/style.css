@@ -116,23 +116,24 @@ button:focus-visible,
 .topbar-inner {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 10px 14px;
+  padding: 8px 12px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px 14px;
+  gap: 8px 12px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
 }
 
 .brand-mark {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
   mix-blend-mode: multiply;
   flex-shrink: 0;
@@ -141,7 +142,7 @@ button:focus-visible,
 .brand-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+  font-size: clamp(1.18rem, 4.2vw, 1.65rem);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.15;
@@ -151,45 +152,55 @@ button:focus-visible,
 
 .sound-btn {
   order: 1;
+  flex-shrink: 0;
 }
 
 .header-switches {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  gap: 6px;
   width: 100%;
   order: 2;
 }
 
 .mode-tabs,
 .seg-group {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 3px;
+  gap: 2px;
   padding: 3px;
   border-radius: var(--radius-pill);
   background: var(--surface-soft);
   border: 1px solid var(--border);
+  min-width: 0;
 }
 
 .tab-btn,
 .seg-btn {
   min-height: 44px;
-  padding: 6px 14px;
+  padding: 6px 6px;
   border: none;
   border-radius: var(--radius-pill);
   background: transparent;
   color: var(--ink-muted);
   font-family: var(--font-display);
-  font-size: 0.94rem;
+  font-size: 0.88rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   white-space: nowrap;
+  min-width: 0;
   transition: background 160ms var(--ease-out), color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+
+.tab-btn .ico,
+.seg-btn .ico {
+  width: 17px;
+  height: 17px;
 }
 
 .tab-btn.is-active {
@@ -235,8 +246,8 @@ button:focus-visible,
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .quiet-left,
@@ -249,18 +260,25 @@ button:focus-visible,
 
 .quiet-btn {
   min-height: 44px;
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--ink-muted);
   font-family: var(--font-display);
-  font-size: 0.94rem;
+  font-size: 0.86rem;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  white-space: nowrap;
   transition: background 150ms var(--ease-out), color 150ms var(--ease-out), border-color 150ms var(--ease-out);
+}
+
+@media (max-width: 355px) {
+  .header-switches {
+    grid-template-columns: 1fr;
+  }
 }
 
 .quiet-btn strong {
@@ -384,18 +402,19 @@ button:focus-visible,
   background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 18px;
+  padding: 14px;
   box-shadow: var(--shadow-sm);
+  min-width: 0;
 }
 
 /* Kaewta Minimal Cue Strip */
 .cue-bar {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 0 2px 12px;
+  gap: 10px;
+  padding: 0 2px 10px;
   border-bottom: 1.5px solid var(--border);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .cue-bar.is-celebrate {
@@ -403,8 +422,8 @@ button:focus-visible,
 }
 
 .cue-avatar {
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   mix-blend-mode: multiply;
   flex-shrink: 0;
@@ -447,20 +466,21 @@ button:focus-visible,
 
 .trays-arena {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 8px;
-  padding: 8px 0 14px;
+  gap: 6px;
+  padding: 6px 0 12px;
 }
 
 .tray-slot {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 10px 6px;
+  gap: 6px;
+  padding: 8px 4px;
   border-radius: var(--radius-md);
   background: transparent;
+  min-width: 0;
   transition: background 180ms var(--ease-out), transform 160ms var(--ease-out);
 }
 
@@ -472,18 +492,21 @@ button:focus-visible,
 .tray-label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 6px;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: 0.9rem;
 }
 
 .tray-figure {
   width: 100%;
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 128px;
+  min-height: 112px;
 }
 
 .tray-svg {
@@ -507,8 +530,8 @@ button:focus-visible,
 }
 
 .arena-op {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1079,7 +1102,8 @@ button:focus-visible,
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS (Mobile-First -> Tablet 680px -> Desktop 960px)
+   RESPONSIVE BREAKPOINTS
+   Mobile (< 680px) -> Tablet Portrait (680px–959px / iPad) -> Landscape & Desktop (>= 960px)
    ========================================================================== */
 
 @media (min-width: 680px) {
@@ -1089,10 +1113,39 @@ button:focus-visible,
     z-index: 40;
   }
 
+  .topbar-inner {
+    padding: 10px 18px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
   .header-switches {
+    display: inline-flex;
     width: auto;
     order: 1;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .mode-tabs,
+  .seg-group {
+    display: inline-flex;
+    gap: 3px;
+  }
+
+  .tab-btn,
+  .seg-btn {
+    padding: 6px 14px;
+    font-size: 0.94rem;
+    gap: 6px;
+  }
+
+  .tab-btn .ico,
+  .seg-btn .ico {
+    width: 20px;
+    height: 20px;
   }
 
   .sound-btn {
@@ -1100,10 +1153,66 @@ button:focus-visible,
   }
 
   .main-shell {
-    padding: 18px 20px 36px;
+    padding: 16px 20px 32px;
+  }
+
+  .quiet-btn {
+    padding: 6px 12px;
+    font-size: 0.94rem;
+  }
+
+  .stage-panel,
+  .math-panel {
+    padding: 18px;
+  }
+
+  .cue-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .arena-op {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tray-figure {
+    min-height: 132px;
   }
 }
 
+/* iPad / Tablet Portrait (720px - 959px): Side-by-side Equation + Result panel so whole app fits 1 screen! */
+@media (min-width: 720px) and (max-width: 959px) {
+  .math-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 20px;
+    align-items: start;
+  }
+
+  .math-panel .panel-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .math-panel .eq-board {
+    grid-column: 1;
+    grid-row: 2;
+    border-bottom: none;
+    border-right: 1.5px solid var(--border);
+    padding-bottom: 0;
+    padding-right: 16px;
+  }
+
+  .math-panel .result-stage {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin-top: 0;
+  }
+}
+
+/* iPad Landscape & Desktop (>= 960px): 2-Column Studio Workbench */
 @media (min-width: 960px) {
   .workbench {
     grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.95fr);
